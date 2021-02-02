@@ -14,7 +14,7 @@ Make sure to have NO uppercase letters in file names. Some of our tools will NOT
       c. Adds package-lock.json = makes sure if anyone grabs your code it's the same version, etc. (shouldn't need to mess with.)
 
 1. Create new file .gitignore and node_modules or node_modules/
-   a. if anyone pulls your code from github, they can recreate your project by downloading the dependencies listed in the json files.
+   a. if anyone pulls your code from github, they can recreate your project by downloading the dependencies listed in the json files. All the other person has to do when they open your project is run npm install in terminal inside VS and npm will kindly install everything you need.
 
 1. npm install body-parser
 
@@ -54,3 +54,5 @@ Make sure to have NO uppercase letters in file names. Some of our tools will NOT
     b. create index.html file inside public folder
     c. Let people access public folder, open server.js and add
     app.use(express.static('server/public'));
+
+// view image in browser: http://localhost:3000/images/HulkHands.jpeg
