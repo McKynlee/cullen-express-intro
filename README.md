@@ -15,3 +15,5 @@ Make sure to have NO uppercase letters in file names. Some of our tools will NOT
 
 1. Create new file .gitignore and node_modules or node_modules/
    a. if anyone pulls your code from github, they can recreate your project by downloading the dependencies listed in the json files.
+
+1. npm install body-parser
