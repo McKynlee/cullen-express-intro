@@ -42,6 +42,11 @@ Make sure to have NO uppercase letters in file names. Some of our tools will NOT
 1.  Open your point number in browser
     localhost:3000
     ------at this point, will see Cannot GET / in browser
+    ------ / is shorthand for index.html
+    ------ We need to create this file as part of server code (see below)
     a. CTRL C means 'STOP this program', must use each time your server gets stuck (when you don't have your usual terminal prompt).
     b. common error: EADDRINUSE (E-address in use, meaning the port is busy)
+
     1. killall -9 node command to kill any other running node ports
+
+1.  Create files in server folder
