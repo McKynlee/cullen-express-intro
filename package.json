@@ -1,0 +1,19 @@
+{
+  "name": "cullen-express-intro",
+  "version": "1.0.0",
+  "description": "Make sure to have NO uppercase letters in file names. Some of our tools will NOT like that.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McKynlee/cullen-express-intro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/McKynlee/cullen-express-intro/issues"
+  },
+  "homepage": "https://github.com/McKynlee/cullen-express-intro#readme"
+}
