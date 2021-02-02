@@ -50,3 +50,7 @@ Make sure to have NO uppercase letters in file names. Some of our tools will NOT
     1. killall -9 node command to kill any other running node ports
 
 1.  Create files in server folder
+    a. create public folder inside server folder
+    b. create index.html file inside public folder
+    c. Let people access public folder, open server.js and add
+    app.use(express.static('server/public'));
