@@ -4,9 +4,14 @@ let express = require('express');
 // Create our app
 const app = express();
 
+//Import quotes module:
+const quotes = require('./modules/quotes');
+
 // INCANTATION:
 // Share any files inside the "public" folder
 app.use(express.static('server/public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //Listen for network requests
 // the first parameter represents a port, can be any number over 3000.
@@ -23,3 +28,17 @@ app.listen(3000, function () {
 //   //When the server is ready, call this function
 //   console.log('Im listening', port);
 // });
+
+app.get('/quotes', function (req, res) {
+  //logic for getting API request goes in here
+  console.log('GET request for quotes');
+  //when writing API we MUST end API functions with either 'send' or 'end', otherwise runs up our bill on cloud
+  res.send(quotes());
+});
+
+
+app.post('/quotes', (req, res) =>) {
+  let quote = req.body.quote_to_add;
+  console.log(quote.author);
+  console.log(quote.quote);
+  };
