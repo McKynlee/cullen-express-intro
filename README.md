@@ -103,7 +103,7 @@ console.log(quote.quote);
 //403 = forbidden
 //404 = not found
 //418 = "I'm a teapot" (April fool's joke by some dev)
-// 500 error always indicates prob on server
+// 500 error always indicates prob on server -- check terminal
 
 res.sendStatus(200);
 });
@@ -160,3 +160,8 @@ Create a new quote, like so:
 ## AJAX - tool for making http requests
 
 (check out client.js)
+
+## Add to server:
+
+1. Make form in HTML
+1.
