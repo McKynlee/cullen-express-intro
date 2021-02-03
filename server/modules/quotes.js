@@ -41,7 +41,11 @@ function addQuote(quoteData) {
   return true;
 }
 
-module.exports = { getNextQuote, addQuote };
+module.exports = {
+  getNextQuote,
+  addQuote,
+  quoteList: quotesData,
+};
 //Don't send out list because, security, just related functions
 //same as:
 //module.exports = { getNextQuote: getNextQuote, addQuote: addQuote };

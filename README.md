@@ -128,3 +128,31 @@ res.sendStatus(200);
    1. Hit "SEND" in Postman POST tab
    1. Postman will give you the status (200 'OK')
    1. Terminal will log the quotes.length
+
+## API
+
+API = Application Programming Interface.
+In this case, is a web serve (Node.js server) with endpoints (ie, URLS, like /quotes) that can receive or send data. The following GET / POST is an example of an API.
+
+### GET /quotes
+
+Returns a new quote every time you hit it. Like so:
+
+```json
+{
+  "quote": "Something pithy",
+  "author": "Someone smart"
+}
+```
+
+### POST /quotes
+
+//TODO: Add to quotesData
+Create a new quote, like so:
+
+```json
+{
+  "quote": "Something pithy",
+  "author": "Someone smart"
+}
+```

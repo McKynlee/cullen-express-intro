@@ -55,3 +55,14 @@ app.post('/quotes', (req, res) => {
   // This will make Postman return "ok" after successfully posting
   res.sendStatus(200);
 });
+
+//Creating new endpoint to get all the quotes:
+//GET /allTheQuotes
+//Return array with all the quotes in it
+
+app.get('/allTheQuotes', function (req, res) {
+  console.log('GET /allTheQuotes');
+
+  //send importedModule.objKey
+  res.send(quotes.quoteList);
+});
