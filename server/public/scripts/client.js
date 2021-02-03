@@ -1,0 +1,35 @@
+console.log('in client.js');
+
+$(document).ready(onReady);
+
+function onReady() {
+  console.log('so ready');
+
+  //Grab that data from the server
+  // GET /allTheQuotes
+  // Use AJAX!  tool for making HTTP requests
+  // from client-side JS code
+  // (it's a function we are going to call, and
+  // it needs to know URL, what method to use -->
+  // we put these things in an object:)
+  // **This object is not taco, must look certain way
+  let ajaxOptions = {
+    url: '/allTheQuotes',
+    method: 'GET',
+  };
+
+  //Pass that object to ajax function
+  // This is called a promise
+  $.ajax(ajaxOptions).then(function (response) {
+    console.log('got a response', response);
+  });
+  //--> this gives us same info as app.get('/allTheQuotes etc)
+  // in server.js module  **must have app.get first for ajax to work
+
+  // Must write things you want to happen with ajax
+  // inside of ajax cuz it lags in returning info
+  console.log('This prob logs first cuz AJAX takes time');
+
+  // Take array of quotes, loop through,
+  // and append to DOM
+}

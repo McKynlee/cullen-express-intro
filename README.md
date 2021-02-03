@@ -156,3 +156,7 @@ Create a new quote, like so:
   "author": "Someone smart"
 }
 ```
+
+## AJAX - tool for making http requests
+
+(check out client.js)
