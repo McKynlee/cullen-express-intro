@@ -52,5 +52,6 @@ app.post('/quotes', (req, res) => {
   //404 = not found
   //418 = "I'm a teapot" (April fool's joke by some dev)
 
+  // This will make Postman return "ok" after successfully posting
   res.sendStatus(200);
 });

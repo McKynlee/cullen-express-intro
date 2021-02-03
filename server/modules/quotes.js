@@ -35,6 +35,9 @@ function getNextQuote() {
 //function to capture new quote when we send that to the server
 function addQuote(quoteData) {
   quotesData.push(quoteData);
+
+  //Way to test if we have added a quote
+  console.log('Starting number of quotes', quotesData.length);
   return true;
 }
 

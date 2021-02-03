@@ -83,7 +83,7 @@ app.use(express.urlencoded({extended: true}));
 5. Add new quote via server.js: (this is us sharing info to our server, rather than requesting info from server = browser posting data to server in the form of JSON)
    FYI (req, res) => is same as function(req, res)
 
-app.post('/quotes', (req, res) =>) {
+app.post('/quotes', (req, res) => {
 //body is standard part of request. req.body is a gift from body-parser --> if we get an error it may be because we haven't installed body-parser
 //quote_to_add is an object
 let quote = req.body.quote_to_add;
@@ -103,5 +103,28 @@ console.log(quote.quote);
 //403 = forbidden
 //404 = not found
 //418 = "I'm a teapot" (April fool's joke by some dev)
+// 500 error always indicates prob on server
 
-res.send
+res.sendStatus(200);
+});
+
+2. Now we need Postman to test in browser!
+   a. open Postman app and insert localhost:3000/quotes just like in browser
+   b. open a second tab with the exact same thing, then change method next to URL from GET to POST.
+   c. open body sub-tab and click raw radio button, swap TEXT to JSON on dropdown.
+
+   1. Type out JSON object to add
+      {
+      "quote_to_add": {
+      "author": "Maya",
+      "quote": "I know why the caged bird sings."
+      }
+      }
+
+   1. Add test in quotes module to check for array length
+      //Way to test if we have added a quote in addQuote fx
+      console.log('Starting number of quotes', quotesData.length);
+   1. Kill server and restart server in Terminal
+   1. Hit "SEND" in Postman POST tab
+   1. Postman will give you the status (200 'OK')
+   1. Terminal will log the quotes.length
