@@ -20,16 +20,25 @@ function onReady() {
 
   //Pass that object to ajax function
   // This is called a promise
-  $.ajax(ajaxOptions).then(function (response) {
-    console.log('got a response', response);
+  $.ajax(ajaxOptions).then(function (quoteList) {
+    console.log('got a response', quoteList);
+
+    //--> this gives us same info as app.get('/allTheQuotes etc)
+    // in server.js module  **must have app.get first for ajax to work
+
+    // Must write things you want to happen with ajax
+    // inside of ajax cuz it lags in returning info
+    console.log('This prob logs first cuz AJAX takes time');
+
+    // Take array of quotes, loop through,
+    // and append to DOM
+    for (let quote of quoteList) {
+      $('.listOfQuotes').append(`
+      <li>
+        <blockquote>
+      "${quote.quote}" --${quote.author}
+        </blockquote>
+      </li>`);
+    }
   });
-  //--> this gives us same info as app.get('/allTheQuotes etc)
-  // in server.js module  **must have app.get first for ajax to work
-
-  // Must write things you want to happen with ajax
-  // inside of ajax cuz it lags in returning info
-  console.log('This prob logs first cuz AJAX takes time');
-
-  // Take array of quotes, loop through,
-  // and append to DOM
 }
