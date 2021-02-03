@@ -80,7 +80,7 @@ app.use(express.urlencoded({extended: true}));
 4. Import quotes module to server.js
    const quotes = require('./modules/quotes');
 
-5. Add new quote via server.js:
+5. Add new quote via server.js: (this is us sharing info to our server, rather than requesting info from server = browser posting data to server in the form of JSON)
    FYI (req, res) => is same as function(req, res)
 
 app.post('/quotes', (req, res) =>) {
@@ -90,3 +90,18 @@ let quote = req.body.quote_to_add;
 console.log(quote.author);
 console.log(quote.quote);
 };
+
+//body = data to send to server (so quote to add here)
+//post = method, /quotes = url / path, POST/quotes = Endpoint/Route
+
+//TODO: add to quotesData.
+
+// TODO: REspond with something! Industry standard is to
+//respond with status and nothing else
+//200 = 'ok'
+// 201 =
+//403 = forbidden
+//404 = not found
+//418 = "I'm a teapot" (April fool's joke by some dev)
+
+res.send

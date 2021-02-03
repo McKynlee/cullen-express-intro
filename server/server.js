@@ -33,12 +33,24 @@ app.get('/quotes', function (req, res) {
   //logic for getting API request goes in here
   console.log('GET request for quotes');
   //when writing API we MUST end API functions with either 'send' or 'end', otherwise runs up our bill on cloud
-  res.send(quotes());
+  res.send(quotes.getNextQuote());
 });
 
-
-app.post('/quotes', (req, res) =>) {
+app.post('/quotes', (req, res) => {
   let quote = req.body.quote_to_add;
   console.log(quote.author);
   console.log(quote.quote);
-  };
+
+  //TODO: add to quotesData.  Pass in body from req
+  quotes.addQuote(quote);
+
+  // TODO: REspond with something!  Industry standard is to
+  //respond with status and nothing else
+  //200 = 'ok'
+  // 201 =
+  //403 = forbidden
+  //404 = not found
+  //418 = "I'm a teapot" (April fool's joke by some dev)
+
+  res.sendStatus(200);
+});
