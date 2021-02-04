@@ -8,12 +8,12 @@ Make sure to have NO uppercase letters in file names. Some of our tools will NOT
 
 1. New library to use: Express. (like we did with jQuery on client-side, but this is server-side). npm = node package manager = js libraries. So in terminal: npm install express
    a. This adds "dependencies" field in JSON file.
-   b. Adds node_modules folder to repo: filed with tons of dependencies of Express.
+   b. Adds node_modules folder to repo: filled with tons of dependencies of Express.
    c. Adds package-lock.json = makes sure if anyone grabs your code it's the same version, etc. (shouldn't need to mess with.)
 
    1. if anyone pulls your code from github, they can recreate your project by downloading the dependencies listed in the json files. All the other person has to do when they open your project is run npm install in terminal inside VS and npm will kindly install everything you need.
 
-   1. THIS IS HUGE! We do NOT want to push this back and forth between repo. So: Create new file .gitignore and node_modules or node_modules/
+   1. THIS IS HUGE! We do NOT want to push this back and forth between repo. So: Create new file .gitignore and write node_modules/ at the top.
 
 1. npm install body-parser
    This is middleware to handle json (allows you to take raw json material and put it into usable format). This actually is part of express right now, otherwise we would have to:
@@ -24,7 +24,7 @@ Make sure to have NO uppercase letters in file names. Some of our tools will NOT
    a. link to express: let express = require('express');
    Do NOT require('./express) because this will link to specific express folder, but we want the general concept from node_modules. Express is a function.
 
-1. Set up the version of "onReady" for express
+1. Set up Express's version of "onReady":
    //Listen for network requests
    // the first parameter represents a port, can be any number over 3000.
    // Convention uses either 3000 or 5000 for port number.
@@ -46,7 +46,7 @@ Make sure to have NO uppercase letters in file names. Some of our tools will NOT
     ------at this point, will see Cannot GET / in browser
     ------ / is shorthand for index.html
     ------ We need to create this file as part of server code (see below)
-    a. CTRL C means 'STOP this program', must use each time your server gets stuck (when you don't have your usual terminal prompt).
+    a. CTRL C means 'STOP this program', must use each time your server gets stuck (when you don't have your usual terminal prompt), and to turn off your server for every git add/commit, etc.
     b. common error: EADDRINUSE (E-address in use, meaning the port is busy)
 
     1. killall -9 node command to kill any other running node ports
@@ -74,8 +74,9 @@ app.use(express.urlencoded({extended: true}));
    //when writing API we MUST end API functions with either 'send' or 'end', otherwise runs up our bill on cloud
    res.send(quotes());
    });
-   /quotes is our request to the server to find that URL (just like /index.html). Kinda lik "If /quotes are requesting, then server's response will be to send the /quotes back.
-   res stands for response
+   /quotes is our request to the server to find that URL (just like /index.html). Kinda like
+   If /quotes are requesting, then server's response will be to send the /quotes back.
+   res stands for response.
 
 4. Import quotes module to server.js
    const quotes = require('./modules/quotes');
