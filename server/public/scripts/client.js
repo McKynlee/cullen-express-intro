@@ -5,6 +5,8 @@ $(document).ready(onReady);
 function onReady() {
   console.log('so ready');
 
+  $(document).on('submit', '#newQuoteForm', onSubmit);
+
   fetchQuotes();
   //Grab that data from the server
   // GET /allTheQuotes
@@ -51,8 +53,6 @@ function onReady() {
 }
 
 function fetchQuotes() {
-  $(document).on('submit', '#newQuoteForm', onSubmit);
-
   let ajaxOptions = {
     url: '/allTheQuotes',
     method: 'GET',
@@ -71,6 +71,8 @@ function fetchQuotes() {
 
       // Take array of quotes, loop through,
       // and append to DOM
+      $('.listOfQuotes').empty();
+
       for (let quote of quoteList) {
         $('.listOfQuotes').append(`
       <li>
@@ -111,6 +113,9 @@ function onSubmit(evt) {
   })
     .then(function (response) {
       console.log('Huzzah!');
+      // In order to have input auto show up on DOM
+      // GET /allTheQuotes again, and re-render
+      fetchQuotes();
     })
     .catch(function (error) {
       console.log('Wah wah wah');
