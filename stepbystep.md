@@ -42,3 +42,18 @@ $.ajax({
    url: 'api/pokemon',
    })
    }); //This asks our server.js if it holds something called api/pokemon and server will deliver the info linked with that.
+   
+   
+   
+   
+# Bring in PostgreSQL:
+   1. in terminal: npm install pg
+   1. in server.js: pg = require('pg');
+   1. connect to db in server.js: 
+   const pool = new pg.Pool({
+      database: 'PUTNAMEHERE'
+      });
+      
+   1. write a query:
+   pool.query('SELECT * FROM "NAMEOFTABLE"').then(....).catch(...)
+   
